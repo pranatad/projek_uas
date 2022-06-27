@@ -86,3 +86,4 @@ Route::post('/report-pembelian/report', [ReportPembelianController::class, 'repo
 
 Route::get('/report-penjualan', [ReportPenjualanController::class, 'index'])->name('report-penjualan');
 Route::post('/report-penjualan/report', [ReportPenjualanController::class, 'report'])->name('report-penjualan-action');
+

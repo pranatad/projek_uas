@@ -91,8 +91,8 @@
                         <td>@currency($data->biayasimpan)</td>
                         <td>{{ $data->leadtime }}</td>
                         <td>
-                                                        <img src="{{ asset('storage/' . $data->image) }}" width="100">
-                                                        </td>
+                        <img src="{{ asset('storage/' . $data->image) }}" width="100">
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

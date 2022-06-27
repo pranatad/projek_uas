@@ -159,7 +159,7 @@
                                                     <th>Harga Jual</th>
                                                     <th>Gambar</th>
                                                     <th>Aksi</th>
-                                                    
+                                            
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -498,8 +498,8 @@
                             <h6 class="font-weight-bold">@currency($data->biayasimpan)</h6> <br>
                             <h6 class="font-weight-bold">{{ $data->leadtime }}</h6> <br>
                             <td>
-                                                        <img src="{{ asset('storage/' . $data->image) }}" width="100">
-                                                        </td>
+                            <img src="{{ asset('storage/' . $data->image) }}" width="100">
+                            </td>
                         </div>
                     </div>
                 </div>

@@ -49,10 +49,10 @@ class BarangController extends Controller
        // }
         
         if ($validated->fails()) {
-            // Jika validasi gagal
+           
             return redirect('/barang')->with('failed-message', 'Data gagal disimpan')->withErrors($validated, 'content');
         } else {
-            // Jika validasi berhasil
+            
             $data = [
                 'kode' => Request()->kode,
                 'nama' => Request()->nama,
@@ -73,7 +73,7 @@ class BarangController extends Controller
 
     public function update(Request $request)
     {
-        // Membuat validasi
+        
         $validated = Validator::make($request->all(), [
             'kode' => 'required|max:255',
             'nama' => 'required|max:255',

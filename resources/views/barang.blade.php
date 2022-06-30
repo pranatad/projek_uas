@@ -304,7 +304,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-4">
-                            <label>Leadtime</label>
+                            <label>Waktu Tunggu (/Jam)</label>
                             <div class="form-group">
                                 <input type="text" name="leadtime" onkeypress="return onlyNumber(event)" class="form-control" required>
                             </div>
@@ -421,7 +421,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-4">
-                                <label>Leadtime</label>
+                                <label>Waktu Tunggu (/Jam)</label>
                                 <div class="form-group">
                                     <input type="text" name="leadtime" value="{{ $data->leadtime }}" onkeypress="return onlyNumber(event)" class="form-control" required>
                                 </div>
@@ -483,7 +483,7 @@
                             <h6>Harga Jual</h6> <br>
                             <h6>Biaya Pesan</h6> <br>
                             <h6>Biaya Simpan</h6> <br>
-                            <h6>Leadtime</h6> <br>
+                            <h6>Waktu Tunggu (/Jam)</h6> <br>
                             <h6>Gambar</h6> <br>
                         </div>
                         <div class="col-7">

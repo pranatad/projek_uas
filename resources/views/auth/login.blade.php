@@ -92,8 +92,13 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-inverse btn-mat btn-block waves-effect text-center m-b-20">LOGIN</button>
+                                        <button type="submit" class="btn btn-inverse btn-mat btn-block waves-effect text-center">LOGIN</button>
                                     </div>
+                                </div>
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                                         <a class="btn btn-inverse btn-mat btn-block waves-effect text-center m-b-1"  href="{{ route('register') }}">REGISTER</a>
+                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-10">
@@ -107,10 +112,12 @@
                     </form>
                         <!-- end of form -->
                 </div>
-                    <!-- Authentication card end -->
+                
             </div>
+             
                 <!-- end of col-sm-12 -->
         </div>
+    
             <!-- end of row -->
     </section>
     <!-- Warning Section Ends -->

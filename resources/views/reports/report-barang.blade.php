@@ -74,7 +74,7 @@
                     <th>Harga Jual</th>
                     <th>Biaya Pesan</th>
                     <th>Biaya Simpan</th>
-                    <th>Leadtime</th>
+                    <th>Waktu Tunggu (/Jam)</th>
                     <th>Gambar</th>
                 </tr>
             </thead>

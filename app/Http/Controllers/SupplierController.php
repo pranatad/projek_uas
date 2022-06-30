@@ -28,7 +28,8 @@ class SupplierController extends Controller
         $validated = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'notelp' => 'required|max:15',
-            'alamat' => 'required|max:255'
+            'alamat' => 'required|max:255',
+            'image' => 'image|file|max:5120',
         ]);
 
         if ($validated->fails()) {
@@ -40,6 +41,7 @@ class SupplierController extends Controller
                 'nama' => Request()->name,
                 'notelp' => Request()->notelp,
                 'alamat' => Request()->alamat,
+                'image' => Request("image")->store('sup-images'),
             ];
             $this->supplier->saveData($data);
             return redirect('/supplier')->with('success-message', 'Data berhasil disimpan');
@@ -53,7 +55,8 @@ class SupplierController extends Controller
             'id' => 'required',
             'name' => 'required|max:255',
             'notelp' => 'required|max:15',
-            'alamat' => 'required|max:255'
+            'alamat' => 'required|max:255',
+            'image' => 'image|file|max:5120',
         ]);
 
         if ($validated->fails()) {
@@ -64,6 +67,7 @@ class SupplierController extends Controller
                 'nama' => Request()->name,
                 'notelp' => Request()->notelp,
                 'alamat' => Request()->alamat,
+                'image' => Request("image")->store('sup-images'),
             ];
             $this->supplier->updateData($id, $data);
             return redirect('/supplier')->with('success-message', 'Data berhasil diupdate');

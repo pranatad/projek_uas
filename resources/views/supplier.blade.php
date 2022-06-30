@@ -154,7 +154,9 @@
                                                     <th>Nama</th>
                                                     <th>No. Telp</th>
                                                     <th>Alamat</th>
+                                                    <th>Gambar</th>
                                                     <th>Aksi</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -164,6 +166,11 @@
                                                         <td>{{ $data->nama }}</td>
                                                         <td>{{ $data->notelp }}</td>
                                                         <td>{{ $data->alamat }}</td>
+                                                        <td>
+                                                        <center>
+                                                        <img src="{{ asset('storage/' . $data->image) }}" width="100">
+                                                        </center>
+                                                        </td>
                                                         <td class="text-center">
                                                             <button class="btn btn-inverse btn-mini" data-toggle="modal"
                                                                 data-target="#editModal{{ $data->id }}">
@@ -199,7 +206,7 @@
     </div>
 </div>
 
-<form action="{{ route('savesupplier') }}" method="post">
+<form action="{{ route('savesupplier') }}" method="post" enctype="multipart/form-data">
     @method('POST')
     @csrf
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -215,6 +222,12 @@
                         <input type="text" name="notelp" onkeypress="return onlyNumber(event)" class="form-control" placeholder="No. Telp" required> <br>
                         <input type="text" name="alamat" class="form-control" placeholder="Alamat" required>
                     </div>
+                    <div class="col align-self-center">
+                            <label for="image">Input Gambar</label>
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="image"></br>
+                            </div>
+                        </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
@@ -226,7 +239,7 @@
 </form>
 
 @foreach ($supplier as $data)
-    <form action="{{ route('updatesupplier') }}" method="POST">
+    <form action="{{ route('updatesupplier') }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         <div class="modal made" tabindex="-1" id="editModal{{ $data->id }}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -241,7 +254,14 @@
                         <input type="text" class="form-control" value="{{ $data->nama }}" autocomplete="off" name="name" placeholder="Name" required /> <br>
                         <input type="text" class="form-control" onkeypress="return onlyNumber(event)" value="{{ $data->notelp }}" autocomplete="off" name="notelp" placeholder="No. Telp" required /> <br>
                         <input type="text" class="form-control" value="{{ $data->alamat }}" autocomplete="off" name="alamat" placeholder="Alamat" required /> <br>
+                   <div class="col align-self-center">
+                            <label for="image">Input Gambar</label>
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="image"></br>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-inverse btn-sm">Update</button>
@@ -250,7 +270,7 @@
             </div>
         </div>
     </form>
-    <form action="{{ route('deletesupplier') }}" method="POST">
+    <form action="{{ route('deletesupplier') }}" method="POST" enctype="multipart/form-data">
         @method('DELETE')
         @csrf
         <div class="modal" tabindex="-1" id="deleteModal{{ $data->id }}">

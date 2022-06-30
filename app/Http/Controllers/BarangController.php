@@ -41,7 +41,7 @@ class BarangController extends Controller
             'biayapesan' => 'required|max:255',
             'biayasimpan' => 'required|max:255',
             'leadtime' => 'required|max:255',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:5120',
         ]);
 
        // if($request->file('image')) {
@@ -85,7 +85,7 @@ class BarangController extends Controller
             'biayapesan' => 'required|max:255',
             'biayasimpan' => 'required|max:255',
             'leadtime' => 'required|max:255',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:5120',
         ]);
 
         if ($validated->fails()) {

@@ -70,6 +70,7 @@
                     <th>Nama</th>
                     <th>No. Telp</th>
                     <th>Alamat</th>
+                    <th>Gambar</th>
                 </tr>
             </thead>
             <tbody>
@@ -79,6 +80,9 @@
                         <td>{{ $data->nama }}</td>
                         <td>{{ $data->notelp }}</td>
                         <td>{{ $data->alamat }}</td>
+                        <td>
+                        <img src="{{ asset('storage/' . $data->image) }}" width="150">
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

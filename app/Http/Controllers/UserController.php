@@ -35,7 +35,7 @@ class UserController extends Controller
 
         if ($validated->fails()) {
             // Jika validasi gagal
-            return redirect('/user')->with('failed-message', 'Data failed to save')->withErrors($validated, 'content');
+            return redirect('/user')->with('failed-message', 'Data gagal disimpan')->withErrors($validated, 'content');
         } else {
             // Jika validasi berhasil
             $data = [
@@ -45,7 +45,7 @@ class UserController extends Controller
                 'role' => Request()->role
             ];
             $this->user->saveData($data);
-            return redirect('/user')->with('success-message', 'Data saved successfully');
+            return redirect('/user')->with('success-message', 'Data berhasil disimpan');
         }
     }
 
@@ -60,7 +60,7 @@ class UserController extends Controller
         ]);
 
         if ($validated->fails()) {
-            return redirect('/user')->with('failed-message', 'Data failed to update')->withErrors($validated, 'content');
+            return redirect('/user')->with('failed-message', 'Data gagal diupdate')->withErrors($validated, 'content');
         } else {
             $id = Request()->id;
             $data = [
@@ -69,7 +69,7 @@ class UserController extends Controller
                 'role' => Request()->role
             ];
             $this->user->updateData($id, $data);
-            return redirect('/user')->with('success-message', 'Data updated successfully');
+            return redirect('/user')->with('success-message', 'Data berhasil diupdate');
         }
     }
 
@@ -77,7 +77,7 @@ class UserController extends Controller
     {
         $id = Request()->id;
         $this->user->deleteData($id);
-        return redirect('/user')->with('success-message', 'Data deleted successfully');
+        return redirect('/user')->with('success-message', 'Data berhasil dihapus');
     }
 
     public function resetpassword(Request $request)
@@ -87,7 +87,7 @@ class UserController extends Controller
             'password' => Hash::make('12345678'),
         ];
         $this->user->updateData($id, $data);
-        return redirect('/user')->with('success-message', 'Password reset successfully');
+        return redirect('/user')->with('success-message', 'Password berhasil direset');
     }
 
     public function updateprofile(Request $request)
@@ -97,7 +97,7 @@ class UserController extends Controller
             'name' => Request()->nama,
         ];
         $this->user->updateData($id, $data);
-        return redirect('/')->with('success-message', 'Update profile successfully');
+        return redirect('/')->with('success-message', 'Profil berhasil diupdate');
     }
 
     public function changepassword(Request $request)
@@ -107,7 +107,7 @@ class UserController extends Controller
             'password' => Hash::make(Request()->password),
         ];
         $this->user->updateData($id, $data);
-        return redirect('/')->with('success-message', 'Change password successfully');
+        return redirect('/')->with('success-message', 'Password Berhasil diganti');
     }
 
     public function report()

@@ -144,12 +144,12 @@
                                     <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                         <li>
                                             <a data-toggle="modal" data-target="#editProfile">
-                                                <i class="feather icon-user"></i> Profile
+                                                <i class="feather icon-user"></i> Profil
                                             </a>
                                         </li>
                                         <li>
                                             <a data-toggle="modal" data-target="#changePassword">
-                                                <i class="feather icon-lock"></i> Change Password
+                                                <i class="feather icon-lock"></i> Ganti Password
                                             </a>
                                         </li>
                                         <li>

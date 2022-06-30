@@ -33,7 +33,7 @@ class SupplierController extends Controller
 
         if ($validated->fails()) {
             // Jika validasi gagal
-            return redirect('/supplier')->with('failed-message', 'Data failed to save')->withErrors($validated, 'content');
+            return redirect('/supplier')->with('failed-message', 'Data gagal disimpan')->withErrors($validated, 'content');
         } else {
             // Jika validasi berhasil
             $data = [
@@ -42,7 +42,7 @@ class SupplierController extends Controller
                 'alamat' => Request()->alamat,
             ];
             $this->supplier->saveData($data);
-            return redirect('/supplier')->with('success-message', 'Data saved successfully');
+            return redirect('/supplier')->with('success-message', 'Data berhasil disimpan');
         }
     }
 
@@ -57,7 +57,7 @@ class SupplierController extends Controller
         ]);
 
         if ($validated->fails()) {
-            return redirect('/supplier')->with('failed-message', 'Data failed to update')->withErrors($validated, 'content');
+            return redirect('/supplier')->with('failed-message', 'Data gagal diupdate')->withErrors($validated, 'content');
         } else {
             $id = Request()->id;
             $data = [
@@ -66,7 +66,7 @@ class SupplierController extends Controller
                 'alamat' => Request()->alamat,
             ];
             $this->supplier->updateData($id, $data);
-            return redirect('/supplier')->with('success-message', 'Data updated successfully');
+            return redirect('/supplier')->with('success-message', 'Data berhasil diupdate');
         }
     }
 
@@ -74,7 +74,7 @@ class SupplierController extends Controller
     {
         $id = Request()->id;
         $this->supplier->deleteData($id);
-        return redirect('/supplier')->with('success-message', 'Data deleted successfully');
+        return redirect('/supplier')->with('success-message', 'Data berhasil dihapus');
     }
 
     public function report()

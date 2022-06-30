@@ -31,14 +31,14 @@ class SatuanController extends Controller
 
         if ($validated->fails()) {
             // Jika validasi gagal
-            return redirect('/satuan')->with('failed-message', 'Data failed to save')->withErrors($validated, 'content');
+            return redirect('/satuan')->with('failed-message', 'Data gagal disimpan')->withErrors($validated, 'content');
         } else {
             // Jika validasi berhasil
             $data = [
                 'nama' => Request()->name,
             ];
             $this->satuan->saveData($data);
-            return redirect('/satuan')->with('success-message', 'Data saved successfully');
+            return redirect('/satuan')->with('success-message', 'Data berhasil disimpan');
         }
     }
 
@@ -51,14 +51,14 @@ class SatuanController extends Controller
         ]);
 
         if ($validated->fails()) {
-            return redirect('/satuan')->with('failed-message', 'Data failed to update')->withErrors($validated, 'content');
+            return redirect('/satuan')->with('failed-message', 'Data gagal diupdate')->withErrors($validated, 'content');
         } else {
             $id = Request()->id;
             $data = [
                 'nama' => Request()->name
             ];
             $this->satuan->updateData($id, $data);
-            return redirect('/satuan')->with('success-message', 'Data updated successfully');
+            return redirect('/satuan')->with('success-message', 'Data berhasil diupdate');
         }
     }
 
@@ -66,7 +66,7 @@ class SatuanController extends Controller
     {
         $id = Request()->id;
         $this->satuan->deleteData($id);
-        return redirect('/satuan')->with('success-message', 'Data deleted successfully');
+        return redirect('/satuan')->with('success-message', 'Data berhasil dihapus');
     }
 
     public function report()

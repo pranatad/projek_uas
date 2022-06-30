@@ -32,14 +32,14 @@ class JenisController extends Controller
 
         if ($validated->fails()) {
             // Jika validasi gagal
-            return redirect('/jenis')->with('failed-message', 'Data failed to save')->withErrors($validated, 'content');
+            return redirect('/jenis')->with('failed-message', 'Data gagal disimpan')->withErrors($validated, 'content');
         } else {
             // Jika validasi berhasil
             $data = [
                 'nama' => Request()->name,
             ];
             $this->jenis->saveData($data);
-            return redirect('/jenis')->with('success-message', 'Data saved successfully');
+            return redirect('/jenis')->with('success-message', 'Data berhasil disimpan');
         }
     }
 
@@ -52,14 +52,14 @@ class JenisController extends Controller
         ]);
 
         if ($validated->fails()) {
-            return redirect('/jenis')->with('failed-message', 'Data failed to update')->withErrors($validated, 'content');
+            return redirect('/jenis')->with('failed-message', 'Data gagal diupdate')->withErrors($validated, 'content');
         } else {
             $id = Request()->id;
             $data = [
                 'nama' => Request()->name
             ];
             $this->jenis->updateData($id, $data);
-            return redirect('/jenis')->with('success-message', 'Data updated successfully');
+            return redirect('/jenis')->with('success-message', 'Data berhasil diupdate');
         }
     }
 
@@ -67,7 +67,7 @@ class JenisController extends Controller
     {
         $id = Request()->id;
         $this->jenis->deleteData($id);
-        return redirect('/jenis')->with('success-message', 'Data deleted successfully');
+        return redirect('/jenis')->with('success-message', 'Data berhasil dihapus');
     }
 
     public function report()

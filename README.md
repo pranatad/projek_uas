@@ -1,10 +1,4 @@
-# Projek UAS - Sistem Inventory - Pencatatan Barang Gudang
-# TEAM 3
-## 1. Abdullah Syahroni Kurniawan
-## 2. Arya Admaja
-## 3. Muhammad Hamamiy Zadah
-## 4. Pranata Dito Fitriyansyah
-## 5. Welson Mario
+# Sistem Inventory - Pencatatan Barang Gudang
 
 # Tutorial
 
